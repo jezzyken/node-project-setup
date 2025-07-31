@@ -14,7 +14,6 @@ const roleSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
     trim: true,
     lowercase: true
   },
@@ -41,7 +40,7 @@ const roleSchema = new mongoose.Schema({
   timestamps: true
 });
 
-roleSchema.index({ name: 1 });
+roleSchema.index({ name: 1 }, { unique: true });
 roleSchema.index({ isActive: 1 });
 
 roleSchema.pre('findOneAndDelete', function(next) {

@@ -7,7 +7,12 @@
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
     "clean-seeds": "node scripts/cleanSeeds.js",
-    "reseed": "node scripts/reseedDatabase.js"
+    "reseed": "node scripts/reseedDatabase.js",
+    "docker:build": "docker build -t document-tracking-system .",
+    "docker:run": "docker run -p 3001:3001 document-tracking-system",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
   },
   "keywords": ["express", "mongodb", "jwt", "authentication"],
   "author": "Jezrell Jolampong",
